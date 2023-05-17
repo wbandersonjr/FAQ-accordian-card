@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <style>
+
+    body{
+      font-family: "Kumbh Sans";
+      color: hsl(238, 29%, 16%);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    }
+
+    header {
+      display: none;
+    }
+
+    nav {
+      display: none;
+    }
+
+    hr {
+      background-color: hsl(240, 5%, 91%);
+      border: 1px solid white;
+    }
+
+    main {
+      display: flex;
+      flex:1 0 auto;
+      height: 100%;
+      /* margin-bottom: 2rem; */
+    }
+
+   
+
+    footer {
+      /* margin-bottom: 1rem; */
+      /* margin-top: -1rem; */
+    }
+    
+    /* settings below for desktop */
+    @media only screen and (min-width: 768px) {
+      h1 {
+      font-weight: 700;
+      font-size: 20px;
+      }
+      .img-woman {
+        width: 300px;
+        margin-left: -19rem;
+        /* margin-bottom: 5rem;; */
+      }
+
+      .img-shadow {
+        width: 650px;
+        margin-left:-25rem;
+        margin-bottom: 6rem;
+      }
+
+      .img-box {
+        width: 100px;
+        position:fixed;
+        margin-left: -3.4em;
+        margin-bottom: -4.1rem; 
+      }
+
+      .graphic {
+        display: flex;
+        /* flex-wrap: nowrap; */
+        align-items: center;
+        width: 50%;
+        /* justify-content: end; */
+        overflow: hidden;
+      }
+
+      
+      .content {
+        width: 40%;
+        margin-right: 1rem;
+        padding-top: 2rem;
+      }
+      .container-top {
+        display: flex;
+        width: 590px;
+        align-items: center;
+        margin: auto auto;
+      }
+
+      .container-main {
+        display: flex;
+        width: 100%;
+        height: 325px;
+        background-color: white;
+        border-radius: 0.8rem;
+      }
+      .content-list {
+        /* padding-right: 1rem; */
+        height: 75%;
+        overflow: auto;
+        scrollbar-gutter: stable;
+      }
+    }
+
+    /* settings below for cellphone */
+    @media only screen and (max-width: 766px) {
+      .img-woman {
+        width: 220px;
+        margin-top: -12rem;
+      }
+
+      .img-shadow {
+        width: 220px;
+        margin-top: -7.5rem;
+      }
+
+      .img-box {
+        width: 70px;
+        margin-left: -10rem;
+        margin-top: -6rem;
+      }
+
+      .graphic {
+        display: flex;
+        flex-direction:column;
+        /* flex-wrap: nowrap; */
+        align-items: center;
+        width: 50%;
+        margin-bottom: 4rem;
+        /* justify-content: end; */
+        /* overflow: hidden; */
+      }
+
+      
+
+      .container-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto auto;
+        width: 280px;
+      }
+
+      .container-main {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        height: 400px;
+        align-items: center;
+        margin: 150px 20px 0px 20px;
+        background-color: white;
+        border-radius: 0.8rem;
+      }
+      .content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+      }
+    }  
+    .question-card {
+        font-size: 9px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+      }
+
+      .answer-card {
+        font-size: 8px;
+        margin: 0.5rem 0;
+      }
+
+      .arrow {
+      transform: scale(0.6);
+      }
+
+      
+
+      .question {
+        flex: 1 0 auto;
+      }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+      
+    #a1 {
+      display: none;
+    }
+    #a2 {
+      display: none;
+    }
+    #a3 {
+      display: none;
+    }
+    #a4 {
+      display: none;
+    }
+    #a5 {
+      display: none;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <header role="banner">This is the header</header>
+  <nav role="navigation">This is the nav</nav>
+
+  <main role="main">
+
+    
+    <div class="container-top">
+
+    <div class="container container-main">
+      
+      <div class="graphic">
+        <img class='img-shadow' src="./images/bg-pattern-desktop.svg">
+        <img class='img-woman' src="./images/illustration-woman-online-desktop.svg">
+        <img class='img-box' src="./images/illustration-box-desktop.svg">
+
+      </div>
+      <div class="content">
+        <h1>FAQ</h1>
+        <div class="content-list">
+
+        <div class="question-card" id="q1">
+          <div class="question">How many team members can I invite? </div><img class="arrow" id="arrow1" src="./images/icon-arrow-down.svg">
+        </div>
+        <div class="answer-card" id="a1">
+          You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.
+        </div>
+        <hr>
+        <div class="question-card" id="q2">
+          <div class="question">What is the maximum file upload size? </div><img class="arrow" id="arrow2" src="./images/icon-arrow-down.svg">
+        </div>
+        <div class="answer-card" id="a2">
+          No more than 2GB. All files in your account must fit your allotted storage space.
+        </div>
+        <hr>
+        <div class="question-card" id="q3">
+          <div class="question">How do I reset my password? </div><img  class="arrow" id="arrow3" src="./images/icon-arrow-down.svg">
+        </div>
+        <div class="answer-card" id="a3">
+          Click “Forgot password” from the login page or “Change password” from your profile page.
+          A reset link will be emailed to you.
+        </div>
+        <hr>
+        <div class="question-card" id="q4">
+          <div class="question">Can I cancel my subscription? </div><img  class="arrow" id="arrow4" src="./images/icon-arrow-down.svg">
+        </div>
+        <div class="answer-card" id="a4">
+          Yes! Send us a message and we’ll process your request no questions asked.
+        </div>
+        <hr>
+        <div class="question-card" id="q5">
+          <div class="question">Do you provide additional support? </div><img  class="arrow" id="arrow5" src="./images/icon-arrow-down.svg">
+        </div>
+        <div class="answer-card" id="a5">
+          Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        </div>
+        <hr>
+        </div>
+      
+    
+    
+
+    
+    
+      
+      </div>
+
+    </div>
+
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">William Anderson</a>.
+    </div>
+  </footer>
+
+ <script>
+
+
+document.getElementById('q1').addEventListener ("click", function(){toggleAnswer("q1","a1","arrow1")});
+document.getElementById('q2').addEventListener ("click", function(){toggleAnswer("q2","a2","arrow2")});
+document.getElementById('q3').addEventListener ("click", function(){toggleAnswer("q3","a3","arrow3")});
+document.getElementById('q4').addEventListener ("click", function(){toggleAnswer("q4","a4","arrow4")});
+document.getElementById('q5').addEventListener ("click", function(){toggleAnswer("q5","a5","arrow5")});
+document.getElementById('q1').onmouseover = function(){document.getElementById("q1").style.color = "hsl(14, 88%, 65%)"};
+document.getElementById('q1').onmouseout = function(){document.getElementById("q1").style.color = "hsl(238, 29%, 16%)"};
+document.getElementById('q2').onmouseover = function(){document.getElementById("q2").style.color = "hsl(14, 88%, 65%)"};
+document.getElementById('q2').onmouseout = function(){document.getElementById("q2").style.color = "hsl(238, 29%, 16%)"};
+document.getElementById('q3').onmouseover = function(){document.getElementById("q3").style.color = "hsl(14, 88%, 65%)"};
+document.getElementById('q3').onmouseout = function(){document.getElementById("q3").style.color = "hsl(238, 29%, 16%)"};
+document.getElementById('q4').onmouseover = function(){document.getElementById("q4").style.color = "hsl(14, 88%, 65%)"};
+document.getElementById('q4').onmouseout = function(){document.getElementById("q4").style.color = "hsl(238, 29%, 16%)"};
+document.getElementById('q5').onmouseover = function(){document.getElementById("q5").style.color = "hsl(14, 88%, 65%)"};
+document.getElementById('q5').onmouseout = function(){document.getElementById("q5").style.color = "hsl(238, 29%, 16%)"};
+
+
+toggleAnswer = function (which_Q, which_A, arrow) {
+  if (document.getElementById(which_A).style.display == "block") {
+    document.getElementById(which_A).style.display = "none";
+    document.getElementById(which_Q).style.fontWeight = "400";
+    document.getElementById(arrow).style.transform = "scaleY(1)";
+  } else {
+    document.getElementById(which_A).style.display = "block";
+    document.getElementById(which_Q).style.color = "hsl(238, 29%, 16%)";
+    document.getElementById(which_Q).style.fontWeight = "700";
+    document.getElementById(arrow).style.transform = "scaleY(-1)";
+
+
+
+  }
+};
+ </script> 
+  
+</body>
+
+</html>
